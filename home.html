@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CropMatch</title>
+  <link rel="stylesheet" href="home.css"> <!-- CSS file -->
+</head>
+<body>
+
+  <h1>Welcome!</h1>
+  <h2>Select a soil type to get started.</h2>
+
+  <div class="dropdown">
+    <select
+    id="dropdownMenu"
+    class="dropdown-content">
+        <!-- Add href to link to soil pages -->
+        <option value="Clay">Clay</option>
+        <option value="Sandy">Sandy</option>
+        <option value="Silty">Silty</option>
+        <option value="Peaty">Peaty</option>
+        <option value="Chalky">Chalky</option>
+        <option value="Loamy">Loamy</option>
+
+  </select>
+
+  </div>
+
+  <button onclick="selectSoil('value')">Continue...</button>
+
+
+
+<!--  <div class="soilBoxes">
+    <div onClick="selectSoil('Clay')" class="soilbox">Clay</div>
+    <div onClick="selectSoil('Sandy')" class="soilbox">Sandy</div>
+    <div onClick="selectSoil('Silty')" class="soilbox">Silty</div>
+    <div onClick="selectSoil('Peaty')" class="soilbox">Peaty</div>
+    <div onClick="selectSoil('Chalky')" class="soilbox">Chalky</div>
+    <div onClick="selectSoil('Loamy')" class="soilbox">Loamy</div>
+  </div> -->
+
+
+
+  <script src="home.js"></script> <!-- JavaScript file -->
+</body>
+</html>
