@@ -16,12 +16,16 @@
   
   .container {
     max-width: 1000px;
+    height: 81vh; 
     margin: auto;
     background: #ffffff;
     padding: 40px;
     border-radius: 16px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
     animation: fadeInContainer 1s ease-out forwards;
+    overflow-y: clip; 
+    display: flex;
+    flex-direction: column;
   }
   
 
@@ -33,6 +37,7 @@
     -webkit-text-fill-color: transparent;
     margin-bottom: 40px;
     opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
   }
   
   .fade-in {
@@ -41,7 +46,7 @@
   
   .crop-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 28px;
   }
   
