@@ -16,30 +16,59 @@
   </div>
 
   <script>
+    async function getSoilNutrients() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const selectedSoil = urlParams.get('soil'); 
+      if (!selectedSoil) {
+        alert('No soil type selected.');
+        return;
+      }
+      try {
+        const response = await fetch(`http://localhost:5000/api/soil/${selectedSoil}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch soil data');
+        }
+        const soilData = await response.json();
+        return soilData.nutrients; 
+      } catch (error) {
+        console.error('Error fetching soil data:', error);
+        return [];
+      }
+    }
+
     async function getCrops() {
       try {
+        const soilNutrients = await getSoilNutrients();
+        if (soilNutrients.length === 0) {
+          return;
+        }
+
         const response = await fetch('http://localhost:5000/api/plants');
         if (!response.ok) {
           throw new Error('Failed to fetch plant data');
         }
-        const crops = await response.json(); 
+        const crops = await response.json();
 
         const cropGrid = document.getElementById('crop-grid');
 
         for (let crop of crops) {
             const cropDataResponse = await fetch(`http://localhost:5000/api/plants/${encodeURIComponent(crop)}`);
             const cropData = await cropDataResponse.json();
-            const cropCard = document.createElement('div');
-            cropCard.classList.add('crop-card', 'slide-up');
-            
-            cropCard.innerHTML = `
-            <h2>${cropData.name}</h2>
-            <p><strong>Guide:</strong> ${cropData.sunlight} | ${cropData.water} | Growing time: ${cropData.growing_time}</p>
-            <p><strong>Warnings:</strong> ${cropData.warning.join(', ')}</p>
-            <p><strong>Nutrition:</strong> ${cropData.nutrition.join(', ')}</p>
-            `;
+            const commonNutrients = cropData.nutrition.filter(nutrient => soilNutrients.includes(nutrient));
 
-            cropGrid.appendChild(cropCard);
+            if (commonNutrients.length >= 1) {  
+                const cropCard = document.createElement('div');
+                cropCard.classList.add('crop-card', 'slide-up');
+
+                cropCard.innerHTML = `
+                <h2>${cropData.name}</h2>
+                <p><strong>Guide:</strong> ${cropData.sunlight} | ${cropData.water} | Growing time: ${cropData.growing_time}</p>
+                <p><strong>Warnings:</strong> ${cropData.warning.join(', ')}</p>
+                <p><strong>Nutrition:</strong> ${cropData.nutrition.join(', ')}</p>
+                `;
+
+                cropGrid.appendChild(cropCard);
+            }
         }
       } catch (error) {
         console.error('Error fetching crop data:', error);

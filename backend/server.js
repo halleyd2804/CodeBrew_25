@@ -102,5 +102,44 @@ app.get('/api/plants/:name', async (req, res) => {
   }
 });
 
+const soilSchema = new mongoose.Schema(
+  {
+    type: { type: String, required: true, unique: true },
+    nutrition: { type: [String], default: [] },
+  },
+  { collection: 'SoilData' } 
+);
+
+const Soil = mongoose.model('Soil', soilSchema);
+
+// List soil names
+app.get('/api/soil', async (_req, res) => {
+  try {
+    const soil = await Soil.find({}, 'type').limit(100).lean();
+    res.json(soil.map((p) => p.type));
+  } catch (error) {
+    console.error('Error fetching soil list:', error);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+// Fetch soil by name (case-insensitive)
+app.get('/api/soil/:type', async (req, res) => {
+  const { type } = req.params;
+  console.log('Searching for soil name:', type);
+  try {
+    const soil = await Soil.findOne({ type: { $regex: `^${type}$`, $options: 'i' } }).lean();
+    if (!soil) {
+      console.warn(`Soil not found: ${type}`);
+      return res.status(404).json({ error: 'Soil not found' });
+    }
+    res.json(soil);
+  } catch (error) {
+    console.error('Error fetching soil:', error);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+
 // Start server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
