@@ -5,44 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CropMatch</title>
-  <link rel="stylesheet" href="home.css"> <!-- CSS file -->
+  <link rel="stylesheet" href="home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <div class="container">
+    <h1>Welcome to <span>CropMatch</span> </h1>
+    <h2>Select a soil type to get started</h2>
 
-  <h1>Welcome!</h1>
-  <h2>Select a soil type to get started.</h2>
+    <div class="dropdown-wrapper">
+      <select id="dropdownMenu" class="dropdownContent">
+        <option disabled selected>Select Soil Type</option>
+        <option value="Clay">Clay</option>
+        <option value="Sandy">Sandy</option>
+        <option value="Silty">Silty</option>
+        <option value="Peaty">Peaty</option>
+        <option value="Chalky">Chalky</option>
+        <option value="Loamy">Loamy</option>
+      </select>
+    </div>
 
-  <div class="dropdown">
-    <select
-    id="dropdownMenu"
-    class="dropdownContent">
-        <!-- Add href to link to soil pages -->
-        <option class="soilOptions" value="Clay">Clay</option>
-        <option class="soilOptions" value="Sandy">Sandy</option>
-        <option class="soilOptions" value="Silty">Silty</option>
-        <option class="soilOptions" value="Peaty">Peaty</option>
-        <option class="soilOptions" value="Chalky">Chalky</option>
-        <option class="soilOptions" value="Loamy">Loamy</option>
-
-  </select>
-
+    <button class="learn-more" onclick="selectSoil()">Continue</button>
   </div>
 
-  <button class="learn-more" onclick="selectSoil('Continue')"> Continue </button>
-
-
-
-<!--  <div class="soilBoxes">
-    <div onClick="selectSoil('Clay')" class="soilbox">Clay</div>
-    <div onClick="selectSoil('Sandy')" class="soilbox">Sandy</div>
-    <div onClick="selectSoil('Silty')" class="soilbox">Silty</div>
-    <div onClick="selectSoil('Peaty')" class="soilbox">Peaty</div>
-    <div onClick="selectSoil('Chalky')" class="soilbox">Chalky</div>
-    <div onClick="selectSoil('Loamy')" class="soilbox">Loamy</div>
-  </div> -->
-
-
-
-  <script src="home.js"></script> <!-- JavaScript file -->
+  <script src="home.js"></script>
 </body>
+
 </html>
