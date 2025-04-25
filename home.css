@@ -25,7 +25,9 @@ body {
   }
   
   h1 span {
-    color: #469e35;
+    background: linear-gradient(to right, #469e35, #7ed957);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     display: inline-block;
     opacity: 0;
     transform: translateY(20px);

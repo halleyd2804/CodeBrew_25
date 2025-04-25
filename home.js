@@ -3,6 +3,6 @@ function toggleDropdown() {
 }
 
 function selectSoil(soil) {
-    open('./result-tab.html')
-    // 
-}
+    window.location.href = './result-tab.html';
+  }
+  
