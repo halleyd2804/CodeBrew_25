@@ -91,5 +91,29 @@ body {
   justify-content: center;
 
 }
- 
+
+.yes-or-no {
+  display: none;
+}
+
+
+.nutrition-fields span {
+  font-weight: 400;
+  font-size: 20px;
+  padding-right: 30px;
+}
+
+.text-fields {
+  font-size: 20px;
+  border-radius: 8px;
+}
+
+.text-fields:focus {
+  border-color: #6fbf73;
+}
+
+.nutrition-fields {
+  margin-bottom: 32px;
+  line-height: 40px;
+}
   
