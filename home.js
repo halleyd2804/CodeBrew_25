@@ -17,7 +17,7 @@ function no() {
 
 async function fetchSoilTypes() {
     try {
-      const response = await fetch('http://localhost:5000/api/soil');
+      const response = await fetch('https://code-brew-backend-5d5142b2402d.herokuapp.com/api/soil');
       if (!response.ok) throw new Error('Failed to fetch soil types');
       const soilTypes = await response.json();
 

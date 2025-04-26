@@ -123,3 +123,4 @@ app.get('/api/soil/:type', async (req, res) => {
 
 // Start server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
