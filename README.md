@@ -1,4 +1,4 @@
-## CropMatch
+# CropMatch
 
 CropMatch is a soil-analytics web application that helps both new and experienced farmers decide which crops to grow based on their soil’s nutritional profile. By narrowing the “what to produce?” question, CropMatch reduces wasted resources and maximizes yield potential. **Deployed site can be found [here](https://halleyd2804.github.io/CodeBrew_25/)**.
 
@@ -19,7 +19,8 @@ CropMatch is a soil-analytics web application that helps both new and experience
   - [Installation](#installation)  
   - [Environment Variables](#environment-variables)  
   - [Running the App](#running-the-app)  
-- [Tech Stack](#tech-stack)  
+- [Tech Stack](#tech-stack)
+- [Deployment Details](#deployment-details)
 - [Roadmap & What’s Next](#roadmap--whats-next)  
 - [Contributing](#contributing)  
 - [License](#license)  
@@ -149,6 +150,14 @@ npm start
 - **Backend:** Node.js, Express.js  
 - **Database:** MongoDB (Mongoose ODM)  
 - **Design & Prototyping:** Figma
+
+---
+
+## Deployment Details
+
+- **Frontend:** Github Pages
+- **Backend:** Heroku
+- **Database:** MongoDB Atlas
 
 ---
 
