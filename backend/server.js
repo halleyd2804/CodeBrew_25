@@ -1,23 +1,3 @@
-// Use the following code snippet as an example for using this API that takes in a crop name and returns the JSON object
-
-/*
-
-async function getPlant(name) {
-      try {
-        const res = await fetch(`http://localhost:5000/api/plants/${encodeURIComponent(name)}`);
-        if (!res.ok) throw new Error('Plant not found');
-        const plant = await res.json();
-        console.log(plant);
-        // e.g. display nutrition, water, etc.
-      } catch (err) {
-        console.error(err);
-      }
-    }
-    
-    // Usage:
-    getPlant('Wheat');
-
-*/
 
 require('dotenv').config();
 const express = require('express');
