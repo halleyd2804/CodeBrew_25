@@ -1,6 +1,6 @@
 ## CropMatch
 
-CropMatch is a soil-analytics web application that helps both new and experienced farmers decide which crops to grow based on their soil’s nutritional profile. By narrowing the “what to produce?” question, CropMatch reduces wasted resources and maximizes yield potential.
+CropMatch is a soil-analytics web application that helps both new and experienced farmers decide which crops to grow based on their soil’s nutritional profile. By narrowing the “what to produce?” question, CropMatch reduces wasted resources and maximizes yield potential. **Deployed site can be found [here](https://halleyd2804.github.io/CodeBrew_25/)**.
 
 ---
 
