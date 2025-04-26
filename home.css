@@ -94,18 +94,25 @@ body {
 
 .yes-or-no {
   display: none;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
 }
 
 .field-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 .field-row span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 400;
   font-size: 20px;
-  text-align: center;
+  width: 100px;
+  color: #555;
 }
 
 .text-fields {
