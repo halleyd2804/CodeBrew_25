@@ -35,15 +35,30 @@
     <div id="if-yes" class="yes-or-no">
       <h2>Input your soil's nutritional values to get started:</h2>
       <div id="nutrition-fields" class="nutrition-fields">
-        <span>N (ppm)</span> <input class="text-fields" id="N" type="number" placeholder="Type here...">
-        <br>
-        <span>P (ppm)</span> <input class="text-fields" id="P" type="number" placeholder="Type here...">
-        <br>
-        <span>K (ppm)</span> <input class="text-fields" id="K" type="number" placeholder="Type here...">
-        <br>
-        <span>pH</span> <input class="text-fields" id="pH" type="number" placeholder="Type here...">
-        <br>
-        <span>Location</span> <input class="text-fields" id="location" type="text" placeholder="Type here...">
+        <div class="field-row">
+          <span>N (ppm)</span>
+          <input class="text-fields" id="N" type="number" placeholder="Type here...">
+        </div>
+
+        <div class="field-row">
+          <span>P (ppm)</span>
+          <input class="text-fields" id="P" type="number" placeholder="Type here...">
+        </div>
+
+        <div class="field-row">
+          <span>K (ppm)</span>
+          <input class="text-fields" id="K" type="number" placeholder="Type here...">
+        </div>
+
+        <div class="field-row">
+          <span>pH</span>
+          <input class="text-fields" id="pH" type="number" placeholder="Type here...">
+        </div>
+
+        <div class="field-row">
+          <span>Location</span>
+          <input class="text-fields" id="location" type="text" placeholder="Type here...">
+        </div>
       </div>
       <button class="learn-more" onclick="fieldvalues()">Continue</button>
     </div>

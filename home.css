@@ -96,16 +96,24 @@ body {
   display: none;
 }
 
+.field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-.nutrition-fields span {
+.field-row span {
   font-weight: 400;
   font-size: 20px;
-  padding-right: 30px;
+  text-align: center;
 }
 
 .text-fields {
-  font-size: 20px;
+  padding: 12px 20px 12px 12px;;
+  font-size: 15px;
   border-radius: 8px;
+  border: 2px solid #ccc;
+  outline: none;
 }
 
 .text-fields:focus {
@@ -114,6 +122,10 @@ body {
 
 .nutrition-fields {
   margin-bottom: 32px;
-  line-height: 40px;
+  line-height: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+
   
